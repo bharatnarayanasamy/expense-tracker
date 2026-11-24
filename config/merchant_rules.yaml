@@ -1,0 +1,129 @@
+# Substring match (case-insensitive) unless pattern starts with "regex:"
+rules:
+  - match: UBER
+    category: Transportation
+  - match: LYFT
+    category: Transportation
+  - match: METRO
+    category: Transportation
+  - match: SHELL
+    category: Transportation
+  - match: CHEVRON
+    category: Transportation
+  - match: NETFLIX
+    category: Subscriptions
+  - match: SPOTIFY
+    category: Subscriptions
+  - match: DISNEY+
+    category: Subscriptions
+  - match: HULU
+    category: Subscriptions
+  - match: AMAZON PRIME
+    category: Subscriptions
+  - match: WHOLE FOODS
+    category: Groceries
+  - match: TRADER JOE
+    category: Groceries
+  - match: SAFEWAY
+    category: Groceries
+  - match: COSTCO
+    category: Groceries
+  - match: STARBUCKS
+    category: Food
+  - match: MCDONALD
+    category: Food
+  - match: CHIPOTLE
+    category: Food
+  - match: DOORDASH
+    category: Food
+  - match: GRUBHUB
+    category: Food
+  - match: UNITED AIR
+    category: Travel
+  - match: DELTA AIR
+    category: Travel
+  - match: AIRBNB
+    category: Travel
+  - match: MARriott
+    category: Travel
+  - match: HILTON
+    category: Travel
+  - match: AMAZON
+    category: Shopping
+  - match: TARGET
+    category: Shopping
+  - match: WALMART
+    category: Shopping
+  - match: CVS
+    category: Healthcare
+  - match: WALGREENS
+    category: Healthcare
+  - match: MINDFUL CHILD
+    category: Healthcare
+  - match: MCAFT.COM
+    category: Healthcare
+  - match: KP NCAL
+    category: Healthcare
+  - match: PG&E
+    category: Utilities
+  - match: COMCAST
+    category: Utilities
+  - match: VERIZON
+    category: Utilities
+  - match: AT&T
+    category: Utilities
+  # Money in from people (split bills, paybacks)
+  - match: Zelle payment from
+    category: Income
+  - match: "regex: Zelle payment to .+[Dd]inner"
+    category: Food
+  - match: "regex: Zelle payment to .+[Ff]ood"
+    category: Food
+  # Real P2P out (not moving money between your own accounts)
+  - match: PMNT SENT
+    category: Other
+  - match: VENMO DES:PURCHASE
+    category: Other
+  - match: Zelle payment to
+    category: Other
+  # Paying credit cards or moving between your accounts — exclude from spend
+  - match: ONLINE/MOBILE RECURRING FROM CHK
+    category: Transfer
+  - match: RECURRING FROM CHK
+    category: Transfer
+  - match: PAYMENT FROM CHK
+    category: Transfer
+  - match: PAYMENT THANK YOU
+    category: Transfer
+  - match: AUTOMATIC PAYMENT
+    category: Transfer
+  - match: AUTOPAY
+    category: Transfer
+  - match: ONLINE BANKING TRANSFER
+    category: Transfer
+  - match: EXT TRNSFR
+    category: Transfer
+  - match: CRCARDPMT
+    category: Transfer
+  - match: CHASE CREDIT CRD
+    category: Transfer
+  - match: CAPITAL ONE DES:CRCARDPMT
+    category: Transfer
+  - match: VENMO DES:CASHOUT
+    category: Transfer
+  - match: DIRECT DEP
+    category: Income
+  - match: PAYROLL
+    category: Income
+  - match: CASTTAXRFD
+    category: Income
+  - match: FRANCHISE TAX BD
+    category: Income
+  - match: DES:CASHOUT
+    category: Transfer
+  - match: INTEREST PAYMENT
+    category: Income
+  - match: OVERDRAFT
+    category: Fees
+  - match: ATM FEE
+    category: Fees
